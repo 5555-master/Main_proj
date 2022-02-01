@@ -1,0 +1,96 @@
+{% extends 'base.html' %}
+
+{% block title %}About{% endblock title %}
+
+
+{% block style %}
+body{
+
+    background-image:url("static/About_img.jpg");
+    background-size:cover;
+    background-rep:no-repeat;
+}
+
+.heading{
+    font-style: italic;
+    font-size: 37px;
+    color: darkgreen;
+    position: absolute;
+    left: 10%;
+    border-bottom:2px solid #581845;
+    
+    
+}
+.image{
+    height: 200px;
+    position: absolute;
+    border-radius: 100%;
+    top: 35%;
+    left: 10%;
+    border: 3px solid #581845;
+}
+.box{
+    border: none;
+    position: absolute;
+    top: 28%;
+    left: 33%;
+    width: 630px;
+    background:#581845;
+    color:white;
+    border-radius:40px;
+    
+}
+
+.txt{
+   border-bottom:2px solid black;
+   padding:3px;
+}
+.ans{
+padding-left:187px;
+
+
+
+}
+i{
+    padding-left:15px;
+    padding-right:2px;
+    color:black;
+}
+.container{
+    margin:30px;
+}
+.intro{
+    padding-left:38px;
+}
+{% endblock style %}
+
+
+{% block body %}
+<h1 class="heading">About Me</h1>
+
+<img  class="image"  title="img1s" src="static/soft3.jpg"></img>
+
+<div class="box">
+ 
+     <p class="intro">Hello, I am  quick learner.Currently, I am pursuing my bachelor of engineering in the computer stream.Learning new things is something I enjoy doing all of the time. In addition, when I have free time, I attempt to engage in constructive tasks.</p>
+     <div class="container"> 
+     <i class="fa fa-envelope"></i>
+    <label class="txt">Email</label>
+    <label class="ans">mehtaparth5555@gmail.com</label><br><br><br>
+    <i class="fa fa-phone"></i>
+    <label class="txt">Contact</label>
+    <label class="ans">9662373774</label><br><br><br>
+    <i class="fa fa-map-marker"></i>
+    <label class="txt">Location</label>
+    <label class="ans"> Gujarat,India</label>
+     </div>
+
+
+       
+    
+   
+</div>
+
+
+
+{% endblock body %}

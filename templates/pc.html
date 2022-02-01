@@ -1,0 +1,86 @@
+{% extends 'base.html' %}
+
+{% block title %}ChangePassword{% endblock title %}
+
+
+{% block style %}
+body{
+    background-image:url("static/login_img.jpg");
+    background-size:cover;
+    background-repeat:no-repeat;
+}
+.container{
+    border:none;
+    position:absolute;
+    top:35%;
+    left:34%;
+    
+}
+
+label{
+    padding:12px;
+
+}
+input{
+    width:50%;
+    padding:12px;
+    margin:18px;
+    border:none;
+    background:white;
+    color:black;
+    border-bottom:2px solid  #581845;
+    border-radius:20px;
+    font-style:italic;
+
+
+
+}
+.bn{
+    width:200px;
+    height:30px;
+    background-color:green;
+    position:fixed;
+    font-size:22px;
+    margin-left:85px;
+    text-align:center;
+    border-radius:20px;
+
+}
+{% endblock style %}
+
+
+{% block body %}
+
+
+
+{% if messages %}
+{% for message in messages %}   
+<div style="background-color:lightgreen;color:white;float:left;font-style:italic;width:100%;text-align:cenrer;">
+    <h3 style="padding-left:20px;">{{ message.tags }} {{message}}<h3>
+</div>
+{% endfor %}
+{% endif %}
+        <div class="container">
+           
+        <form method="post" action="/pc">
+            {% csrf_token %}    
+        <input type="text" name="username" id="username"  placeholder="Enter your Username">
+      
+        
+      
+        <input type="password" name="password" id="password"  placeholder="Enter your password">
+        
+       
+        
+        <input type="password"name="repassword" id="repassword"  placeholder="Reenter Password"><br>
+        
+        <button  class="bn" type="submit">Submit</button>
+        {% csrf_token %} 
+    </form>
+    
+        </div>
+    
+
+</div>
+
+{% endblock body %}

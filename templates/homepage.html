@@ -1,0 +1,27 @@
+ {% extends 'base.html' %}
+
+{% block title %}Homepage{% endblock title %}
+
+{% block style %}  
+body {
+    background-image: url("static/fl1.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+} 
+.hdg{
+    font-size:40px;
+    font-style:italic;
+}
+ {% endblock style %}
+ 
+{% block body %} 
+{% if messages %}
+{% for message in messages %}   
+<div style="background-color:lightgreen;color:white;float:left;font-style:italic;width:100%;text-align:cenrer;">
+    <h3 style="padding-left:20px;"> {{message}}<h3>
+</div>
+{% endfor %}
+{% endif %}
+
+<h1 class="hdg">“For in the true nature of things,<br> if we rightly consider, <br>every green tree is far more glorious than <br> if it were  made of gold and silver.”<br><br><br><b><pre>           —Martin Luther</pre></b></h1>
+{% endblock body %}

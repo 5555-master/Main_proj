@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+    <head> 
+        <title> {% block title %}{% endblock title %} | Plants</title>
+        <meta charset="UTF-8">
+        <script src="https://kit.fontawesome.com/bec653d265.js" crossorigin="anonymous"></script>
+        <meta name="viewport" content="width=device-width,initial-scale=1.0">
+        <meta http-equiv="X-UA-compatible" content="ie=edge">
+        <style>
+            {% block style %} {% endblock style %}
+           .navbar{
+               background-color: #581845;
+               border-radius: 30px;
+               font-style: italic;
+               
+           }
+          
+           
+
+           .navbar ul{
+               overflow:auto;
+               
+               
+              
+           }
+           .navbar ul li {
+                float: left;
+                list-style: none;
+                padding: 20px;
+
+                
+                
+                
+               
+                
+           }
+           .navbar ul li a{
+               text-decoration: none;
+               color:white;
+           }
+           .navbar ul li a:hover{
+               color: black;
+           }
+           div{
+               float: right;
+               padding-right:100px;
+           }
+           button{
+              
+
+               block-size: 22px;
+               border-radius: 9px;
+               margin: 19px;
+               border:none;
+               text-align: center;
+               width:120px;
+               background-color:   #3DFF33 ;
+               color: white;
+               font-style:italic;
+}
+
+ 
+
+.logo{
+    
+    height: 54px;
+    width: 67px;
+    float: left;
+
+}
+
+           
+        </style>
+    </head>
+    <body>
+       
+        <header>
+            <nav class="navbar">
+                <ul>
+                    <img class="logo" src="static/leaf.png">
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/Information">Information</a></li>
+                    <li><a href="/About">About</a></li>
+                    <li><a href="/Contact">Contact Us</a></li>
+                    <div>
+                        <a  href="/Login"><button>Login</button></a>
+                        <a href="/Signup"><button>Signup</button></a>
+                        <a href="/logout"><i  style="color:#3DFF33;padding-left:10px;"class="fa fa-sign-out"></i></a>
+                    </div>
+                </ul>
+
+            </nav>
+        </header>
+     {% block body %}{% endblock body %}
+    </body>
+</html>

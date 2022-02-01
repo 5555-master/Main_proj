@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8"
+        <meta name="viewport"  content="width=device-width,initial-sclae=1.0">
+        <script src="https://kit.fontawesome.com/bec653d265.js" crossorigin="anonymous"></script>
+        <title>Plants</title>
+        <style>
+            body{
+                background: url("static/login-img.jpg") no-repeat  center center  fixed;
+                background-size: cover;
+              
+            }
+            ::placeholder {
+            color: #581845;
+             opacity: 1; /* Firefox */
+}
+
+            .container{
+                
+                color:white;
+                position:absolute;
+                top:17%;
+                left:41%;
+                font-style:italic;
+            }
+
+            .container h1{
+                font-size: 30px;
+                border-bottom:#581845 5px solid;
+                padding: 2px 0;
+                margin-bottom:31px;
+            }
+
+            .box{
+                width: 100%;
+                border-bottom: #581845 2px solid;
+                margin: 23px 0px;
+        
+            }
+
+            .box input{
+                width:75%;
+                border:none;
+                outline: none;
+                color:#581845;
+                font-style: italic;
+                padding:6px 10px;
+                background:none;
+                
+            }
+
+            .btn{
+                color:white;
+                cursor: pointer;
+                width:47%;
+                border: none;
+                outline:none;
+                background:none;
+                margin: 15px 55px;
+                padding: 6px;
+                border-radius: 10px;
+                border:2px solid #581845;
+                font-size: 15px;
+                font-style: italic;
+            }
+
+            .box i{
+                width:20px;
+                text-align: center;
+                padding: 7px 1px;
+
+            }
+
+        </style>
+
+    </head>
+    <body >
+        {% if messages %}
+{% for message in messages %}   
+<div style="background-color:lightgreen;color:white;float:left;font-style:italic;width:100%;text-align:cenrer;">
+    <h3 style="padding-left:20px;">{{ message.tags }} {{message}}<h3>
+</div>
+{% endfor %}
+{% endif %}
+        <div class="container">
+            <h1>Sign Up</h1>
+            <form method="post" action="/Signup">
+                {% csrf_token %}
+            
+             <div class="box">
+                <i class="fa fa-user"></i>
+               <input type="text" name="username" id="username" placeholder="Enter Your Username" required>    
+               </div>
+               <div class="box">
+                <i class="fa fa-envelope"></i>
+               <input type="email" name="email" id="email" placeholder="Enter Your E-mail" required>    
+               </div>
+             <div class="box">
+             <i class="fa fa-key"></i>
+             <input type="password" name="password"  id="password" placeholder=" Enter Your Password" required>
+             </div>
+             <div class="box">
+                <i class="fa fa-key"></i>
+                <input type="password" name="repassword"  id="repassword" placeholder=" Renter Your Password" required>
+                </div>
+             <button class="btn" type="submit">Sign Up</button>
+             {% csrf_token %}
+            </form>
+        </div>
+     
+    </body>
+</html>
