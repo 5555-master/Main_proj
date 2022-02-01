@@ -122,7 +122,7 @@ def Logout_user(request):
 
 def send_mail_after(email,token):
     subject="YOur Accounts need to be verified"
-    messages=f"hii.This is link for verfication http://127.0.0.1:8000/verify/{token}"
+    messages=f"hii.This is link for verfication https://plantsparth.herokuapp.com/verify/{token}"
     email_from=settings.EMAIL_HOST_USER
     recipient_list=[email]
     send_mail(subject,messages,email_from,recipient_list)
@@ -192,7 +192,7 @@ def Forgot(request):
 def Forgotpassword_mail(email,token):
     print(email,token)
     subject="this is a link to change password"
-    messages=f"hii.This is link for verfication http://127.0.0.1:8000/Changepassword/{token}"
+    messages=f"hii.This is link for verfication https://plantsparth.herokuapp.com/Changepassword/{token}"
     email_from=settings.EMAIL_HOST_USER
     recipient_list=[email]
     send_mail(subject,messages,email_from,recipient_list)
